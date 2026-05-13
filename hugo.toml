@@ -1,0 +1,52 @@
+baseURL      = "https://dbaelipro.github.io/hugo-with-comments/"
+languageCode = "fr-FR"
+defaultContentLanguage = "fr"
+title        = "FlowCon France"
+theme        = "PaperMod"
+
+enableRobotsTXT = true
+enableGitInfo   = true
+enableEmoji     = true
+
+[permalinks]
+  # default is fine; documented here for future tuning
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    style = "github"
+    noClasses = false
+
+[params]
+  env = "production"
+  description = "FlowCon France — la conférence francophone sur le Flow, le Lean et le management visuel."
+  author = "FlowCon France"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowBreadCrumbs  = true
+  comments = false
+
+  [params.homeInfoParams]
+    Title = "FlowCon France"
+    Content = "La communauté francophone du Flow."
+
+  [[params.socialIcons]]
+    name = "github"
+    url  = "https://github.com/dbaelipro/hugo-with-comments"
+
+[[menu.main]]
+  identifier = "about"
+  name       = "À propos"
+  url        = "/about/"
+  weight     = 10
+
+[[menu.main]]
+  identifier = "manifesto"
+  name       = "Manifeste"
+  url        = "/manifesto/"
+  weight     = 20
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
