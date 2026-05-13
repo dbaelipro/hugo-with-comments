@@ -2,7 +2,7 @@
 title: "Notre Manifeste"
 date: 2024-01-01
 draft: false
-comments: false
+comments: true
 ---
 
 ## Notre Manifeste

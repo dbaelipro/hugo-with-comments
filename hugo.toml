@@ -32,6 +32,22 @@ enableEmoji     = true
     Title = "FlowCon France"
     Content = "La communauté francophone du Flow."
 
+  # TODO (repo admin): replace placeholder IDs after running the one-time Giscus setup
+  # documented in docs/giscus-setup.md
+  [params.giscus]
+    repo            = "dbaelipro/hugo-with-comments"
+    repoId          = "REPLACE_WITH_REPO_ID"
+    category        = "Site Comments"
+    categoryId      = "REPLACE_WITH_CATEGORY_ID"
+    mapping         = "pathname"
+    strict          = "0"
+    reactionsEnabled = "1"
+    emitMetadata    = "0"
+    inputPosition   = "bottom"
+    theme           = "preferred_color_scheme"
+    lang            = "fr"
+    loading         = "lazy"
+
   [[params.socialIcons]]
     name = "github"
     url  = "https://github.com/dbaelipro/hugo-with-comments"
