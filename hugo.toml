@@ -13,6 +13,7 @@ enableEmoji     = true
 
 [markup]
   [markup.goldmark.renderer]
+    # Allows raw HTML in Markdown — safe for admin-only content, review if opening to contributors
     unsafe = true
   [markup.highlight]
     style = "github"
@@ -40,7 +41,7 @@ enableEmoji     = true
     category        = "Site Comments"
     categoryId      = "REPLACE_WITH_CATEGORY_ID"
     mapping         = "pathname"
-    strict          = "0"
+    strict          = "1"
     reactionsEnabled = "1"
     emitMetadata    = "0"
     inputPosition   = "bottom"

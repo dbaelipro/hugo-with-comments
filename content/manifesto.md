@@ -5,8 +5,6 @@ draft: false
 comments: true
 ---
 
-## Notre Manifeste
-
 **Les Produits** PLUTÔT QUE les projets
 
 **L'Équipe** PLUTÔT QUE l'individu

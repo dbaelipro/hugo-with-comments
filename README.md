@@ -23,5 +23,5 @@ Le site est déployé automatiquement sur GitHub Pages à chaque push sur `main`
 
 - `content/` — pages Markdown
 - `layouts/partials/comments.html` — stub pour le futur système de commentaires
-- `.github/workflows/deploy.yml` — pipeline CI/CD GitHub Pages
+- `.github/workflows/deploy.yml` — pipeline CI/CD GitHub Pages *(à ajouter manuellement — voir description de la PR #1)*
 - `themes/PaperMod/` — thème Git submodule

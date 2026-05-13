@@ -1,11 +1,9 @@
 ---
 title: "À propos de FlowCon France"
-date: 2026-05-13
+date: 2025-01-01
 draft: false
 comments: false
 ---
-
-## À propos de FlowCon France
 
 FlowCon France est une communauté et une conférence dédiées aux praticiens du Flow, du Lean et de l'amélioration continue. Fondée sur la conviction que les organisations peuvent créer plus de valeur en réduisant les goulots d'étranglement, en raccourcissant les délais et en faisant circuler le travail de manière fluide, FlowCon France rassemble chaque année des agilistes, des managers et des équipes de terrain autour d'une même ambition : livrer mieux, ensemble.
 
