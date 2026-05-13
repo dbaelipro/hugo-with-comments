@@ -1,0 +1,32 @@
+{{/*
+  Giscus comments partial.
+  Rendered by PaperMod when a page has `comments: true` in its front matter.
+  All configuration lives in [params.giscus] in hugo.toml.
+  The script is suppressed until repoId and categoryId are replaced with real values.
+*/}}
+{{- with site.Params.giscus }}
+{{- if and (ne .repoId "REPLACE_WITH_REPO_ID") (ne .categoryId "REPLACE_WITH_CATEGORY_ID") }}
+<section class="comments" aria-label="Commentaires">
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ .repo }}"
+          data-repo-id="{{ .repoId }}"
+          data-category="{{ .category }}"
+          data-category-id="{{ .categoryId }}"
+          data-mapping="{{ .mapping | default "pathname" }}"
+          data-strict="{{ .strict | default "1" }}"
+          data-reactions-enabled="{{ .reactionsEnabled | default "1" }}"
+          data-emit-metadata="{{ .emitMetadata | default "0" }}"
+          data-input-position="{{ .inputPosition | default "bottom" }}"
+          data-theme="{{ .theme | default "preferred_color_scheme" }}"
+          data-lang="{{ .lang | default "fr" }}"
+          data-loading="{{ .loading | default "lazy" }}"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>
+    Les commentaires nécessitent JavaScript. Vous pouvez aussi
+    <a href="https://github.com/{{ .repo }}/discussions">participer directement sur GitHub</a>.
+  </noscript>
+</section>
+{{- end }}
+{{- end }}
