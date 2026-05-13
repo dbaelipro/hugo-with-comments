@@ -2,6 +2,8 @@
 
 Ce document décrit les étapes manuelles à effectuer **une seule fois** pour activer les commentaires Giscus sur FlowCon France.
 
+> ✅ **Les identifiants Giscus (`repoId` et `categoryId`) sont déjà configurés dans `hugo.toml`.** Les étapes ci-dessous concernent uniquement la configuration côté GitHub (Discussions, application Giscus) qui doit être faite par un administrateur du dépôt.
+
 ---
 
 ## Prérequis
@@ -25,57 +27,17 @@ Rendez-vous sur <https://github.com/apps/giscus> et cliquez sur **Install**.
 
 Sélectionnez **Only select repositories** puis choisissez `hugo-with-comments`. Validez.
 
-### 3. Créer la catégorie de discussion "Site Comments"
+### 3. Vérifier la catégorie de discussion "Q&A"
 
-Dans l'onglet **Discussions** du dépôt :
+La catégorie utilisée est la catégorie **Q&A** intégrée par défaut à GitHub Discussions — aucune création manuelle n'est nécessaire.
 
-1. Cliquer sur **Categories** (colonne de gauche) → icône crayon
-2. Cliquer sur **New category**
-3. Nom : **`Site Comments`** (doit correspondre exactement à la valeur dans `hugo.toml`)
-4. Type : **Announcement** — seuls les mainteneurs peuvent ouvrir des fils ; les visiteurs peuvent uniquement répondre (évite la pollution de la catégorie)
-5. Valider
+Vérifiez simplement qu'elle est bien présente dans l'onglet **Discussions** du dépôt.
 
-### 4. Générer les identifiants Giscus
-
-Rendez-vous sur <https://giscus.app> et renseignez :
-
-| Champ | Valeur |
-|---|---|
-| Repository | `dbaelipro/hugo-with-comments` |
-| Page ↔ Discussion mapping | `pathname` |
-| Category | `Site Comments` |
-| Features | ✅ Enable reactions, ✅ Load lazily |
-| Theme | `preferred_color_scheme` |
-| Language | `fr` |
-
-En bas de la page, Giscus génère un bloc `<script>`. Notez les deux valeurs :
-
-- `data-repo-id` → c'est votre **`repoId`**
-- `data-category-id` → c'est votre **`categoryId`**
-
-Ces valeurs sont publiques (elles apparaissent dans le HTML rendu) — les commiter est la pratique documentée par Giscus.
-
-### 5. Mettre à jour `hugo.toml`
-
-Ouvrez `hugo.toml` et remplacez les valeurs dans le bloc `[params.giscus]` :
-
-```toml
-[params.giscus]
-  repoId     = "REPLACE_WITH_REPO_ID"      # ← remplacer ici
-  categoryId = "REPLACE_WITH_CATEGORY_ID"  # ← remplacer ici
-```
-
-Commitez et poussez sur `feature/hugo-site` (ou directement sur `main` après fusion) :
-
-```bash
-git add hugo.toml
-git commit -m "chore: set Giscus repoId and categoryId"
-git push
-```
-
-### 6. Activer GitHub Pages (si pas déjà fait)
+### 4. Activer GitHub Pages (si pas déjà fait)
 
 **Settings → Pages → Build and deployment → Source → GitHub Actions**
+
+Ajouter ensuite le fichier `.github/workflows/deploy.yml` sur la branche (voir description de la PR).
 
 ---
 
@@ -106,7 +68,7 @@ comments: true
 - **Supprimer du spam** : *Edit → Delete*
 - **Verrouiller un fil** : Discussion → *Lock conversation*
 - **Bannir un utilisateur** : Settings → Moderation → Blocked users
-- **Supprimer tous les commentaires d'une page** : supprimer la discussion correspondante dans la catégorie *Site Comments* — le widget affichera "Soyez le premier à commenter" à la prochaine visite
+- **Supprimer tous les commentaires d'une page** : supprimer la discussion correspondante dans la catégorie *Q&A* — le widget affichera "Soyez le premier à commenter" à la prochaine visite
 
 ## Sécurité
 
